@@ -8,7 +8,7 @@ $client = new Google_Client();
 $client->setDeveloperKey($DEVELOPER_KEY);
 $youtube = new Google_YoutubeService($client);
 
-if (isset($_GET['q']) {
+if (isset($_GET['q'])) {
     $searchResponse = $youtube->search->listSearch('id,snippet', array(
         'q'                 => $_GET['q'],
         'maxResults'        => 25,
@@ -24,7 +24,7 @@ if (isset($_GET['q']) {
     }
 }
 
-if (isset($_GET['v']) {
+if (isset($_GET['v'])) {
     $searchResponse = $youtube->search->listSearch('id,snippet', array(
         'relatedToVideoId'  => $_GET['v'],
         'maxResults'        => 25,
