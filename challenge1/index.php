@@ -17,8 +17,7 @@ if (isset($_GET['q'])) {
     foreach ($searchResponse['items'] as $searchResult) {
         switch ($searchResult['id']['kind']) {
             case 'youtube#video':
-                $videos .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
-                $searchResult['id']['videoId']."<a href=index.php?v=".$searchResult['id']['videoId']." >Videos Relacionados</a>");
+                $videos .= sprintf('<li><a href="?v=%s">%s</a></li>', $searchResult['id']['videoId'], $searchResult['snippet']['title']);
                 break;
         }
     }
@@ -34,11 +33,14 @@ if (isset($_GET['v'])) {
     foreach ($searchResponse['items'] as $searchResult) {
         switch ($searchResult['id']['kind']) {
             case 'youtube#video':
-                $videos .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
-                $searchResult['id']['videoId']."");
+                $videos .= sprintf('<li><a href="?f=%s"><img src="%s" /></a></li>', $searchResult['id']['videoId'], $searchResult['id']['thumbnails']);
                 break;
         }
     }
+}
+
+if (isset($_GET['f'])) {
+
 }
 ?>
 
