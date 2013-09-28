@@ -48,7 +48,7 @@ if (isset($_GET['f'])) {
 <html>
   <head>
     <title>YouTube Search</title>
-
+    <link rel="stylesheet" href=".\bootstrap.css">
     <link rel="stylesheet" href=".\style.css">
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500' rel='stylesheet' type='text/css'>
 
@@ -57,7 +57,7 @@ if (isset($_GET['f'])) {
   <body>
     <form method="GET">
         <h1> GDG </h1>
-        <div id="pesquisa"> 
+        <div id="pesquisa">
             Search:<input type="text" name="q">
             <button>Pesquisar!</button>
         </div>
