@@ -96,10 +96,15 @@ if (isset($_GET['v'])) {
     <link rel="stylesheet" href=".\bootstrap.css">
     <link rel="stylesheet" href=".\style.css">
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500' rel='stylesheet' type='text/css'>
-
+    <style>
+       body { background-image:url('fundo.jpg');
+       background-repeat: no-repeat;
+       }
+       </style>
   </head>
 
   <body>
+
     <form method="GET">
         <h1> GDG </h1>
         <div id="pesquisa">
