@@ -106,11 +106,7 @@ if (isset($_GET['v'])) {
   <body>
 
     <form method="GET">
-        <h1> GDG </h1>
-        <div id="pesquisa">
-            Search:<input type="text" name="q">
-            <button>Pesquisar!</button>
-        </div>
+
 
         <div id="botoesuser">
             <ul>
@@ -124,6 +120,12 @@ if (isset($_GET['v'])) {
                     ?>
                 </div>
             </ul>
+        </div>
+
+        <h1> GDG </h1>
+        <div id="pesquisa">
+            Search:<input type="text" name="q">
+            <button>Pesquisar!</button>
         </div>
 
     </form>
