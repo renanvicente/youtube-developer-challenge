@@ -105,7 +105,15 @@ if (isset($_GET['v'])) {
 
         <div id="botoesuser">
             <ul>
-                <li> <button name='login'> Connect </button> </li>
+                <div id="botao_conectar">
+                    <?php
+                    if(isset($authUrl)) {
+                        print "<a name='connect' href='$authUrl'>Connect</a>";
+                    } else {
+                    print "<a name='logout' href='?logout'>Logout</a>";
+                    }
+                    ?>
+                </div>
                 <li> <button name="addwatch"> Watch later </button> </li>
             </ul>
         </div>
