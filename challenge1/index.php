@@ -71,6 +71,7 @@ if (isset($_GET['v'])) {
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'relatedToVideoId' => $_GET['v'],
             'maxResults' => 25,
+            'type' => 'video'
         ));
 
         $videos = '';
