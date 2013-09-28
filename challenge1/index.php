@@ -53,9 +53,10 @@ if ($_GET['q']) {
 <html>
   <head>
     <title>YouTube Search</title>
-    <style type="text/css">
-        body{margin-top: 50px; margin-left: 200px}
-    </style>
+    
+    <link rel="stylesheet" href=".\style.css">
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500' rel='stylesheet' type='text/css'>
+
   </head>
 
   <body>
