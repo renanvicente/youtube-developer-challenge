@@ -49,7 +49,7 @@ if ($client->getAccessToken()) {
         $htmlBody .= sprintf('<li>%s (%s)</li>', $playlistItem['snippet']['title'],
           $playlistItem['snippet']['resourceId']['videoId']);
 
-        $htmlBody .= sprintf('<li><a href="?v=%s"><img src="%s" /></a>%s</li>', $playlistItem['snippet']['title'], $playlistItem['snippet']['resourceId']['videoId'], "http://img.youtube.com/vi/" . $playlistItem['snippet']['resourceId']['videoId'] . "/default.jpg");
+        $htmlBody .= sprintf('<li><a href="?v=%s"><img src="%s" /></a>%s</li>', $playlistItem['snippet']['title'], "http://img.youtube.com/vi/" . $playlistItem['snippet']['resourceId']['videoId'] . "/default.jpg", $playlistItem['snippet']['resourceId']['videoId']);
       }
 
   // The access token may have been updated lazily.
