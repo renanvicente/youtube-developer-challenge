@@ -81,7 +81,7 @@ if (isset($_GET['v'])) {
       switch ($searchResult['id']['kind']) {
         case 'youtube#video':
           $videos .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
-            $searchResult['id']['videoId']."<a href=index.php?v=".$searchResult['id']['videoId']." target=_blank>   Videos Relacionados</a>");
+            $searchResult['id']['videoId']."");
           break;
         case 'youtube#channel':
           $channels .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
