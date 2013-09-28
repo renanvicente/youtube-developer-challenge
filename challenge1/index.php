@@ -57,10 +57,13 @@ if (isset($_GET['v'])) {
         <h1> GDG </h1>
         <div id="pesquisa">
             Search:<input type="text" name="q">
-            <button>Pesquisar!</button>
+            <button name="pesquisar">Pesquisar!</button>
         </div>
 
-
+        <div id="botoesusr">
+            <button name='login'> Login </button>
+            <button name="addwatch"> Add watch later </button>
+        <div>
     </form>
 
     <div id="resultado">

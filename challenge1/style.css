@@ -16,6 +16,12 @@ body {
 	width: 60%;
 }
 
+#botaousr {
+	border-radius: 3px;
+	padding: 5px 10px;
+	float: left;
+}
+
 ul {
 	text-decoration: none;
 	list-style: none;
