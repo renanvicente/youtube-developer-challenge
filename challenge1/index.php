@@ -54,7 +54,7 @@ if (isset($_GET['v'])) {
 
   <body>
     <form method="GET">
-
+        <h1> GDG </h1>
         <div>
             Search:<input type="text" name="q">
         </div>
