@@ -23,7 +23,6 @@ if ($_GET['q'] && $_GET['maxResults']) {
         $videos = '';
         $channels = '';
 
-<<<<<<< HEAD
     foreach ($searchResponse['items'] as $searchResult) {
       switch ($searchResult['id']['kind']) {
         case 'youtube#video':
@@ -35,22 +34,6 @@ if ($_GET['q'] && $_GET['maxResults']) {
             $searchResult['id']['channelId']);
           break;
        }
-    }
-=======
-        foreach ($searchResponse['items'] as $searchResult) {
-            switch ($searchResult['id']['kind']) {
-                case 'youtube#video':
-                    $videos .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
-                        $searchResult['id']['videoId']."<a href=http://www.youtube.com/watch?v=".$searchResult['id']['videoId']." target=_blank>     Watch This Video</a>");
-                    break;
-                case 'youtube#channel':
-                    $channels .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
-                        $searchResult['id']['channelId']);
-                    break;
-             }
-        }
->>>>>>> 206be2c8c9a18e4006a580187fd7590584497835
-
      } catch (Google_ServiceException $e) {
         $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
             htmlspecialchars($e->getMessage()));
@@ -63,39 +46,14 @@ if ($_GET['q'] && $_GET['maxResults']) {
 
 <!doctype html>
 <html>
-<<<<<<< HEAD
   <head>
     <title>YouTube Search</title>
-	<style type="text/css">
-		body{margin-top: 50px; margin-left: 200px}
-	</style>
-  </head>
-  
-  <body>
-	<form method="GET">
-		
-		<div>
-			Search:<input type="text" name="search">
-		</div>
-		
-		<button>Pesquisar!</button>
-		
-	</form>
-	
-	<div id="resultado">
-		<!-- Resultado da pesquisa -->
-		<h3> Resultado </h3>
-		<ul><?php echo $videos; ?></ul>
-	</div>
-=======
-    <head>
-        <title>YouTube Search</title>
     <style type="text/css">
-        body{margin-top: 50px; margin-left: 50px}
+        body{margin-top: 50px; margin-left: 200px}
     </style>
-    </head>
+  </head>
 
-    <body>
+  <body>
     <form method="GET">
 
         <div>
@@ -111,7 +69,5 @@ if ($_GET['q'] && $_GET['maxResults']) {
         <h3> Resultado </h3>
         <ul><?php echo $videos; ?></ul>
     </div>
->>>>>>> 206be2c8c9a18e4006a580187fd7590584497835
-
     </body>
 </html>
