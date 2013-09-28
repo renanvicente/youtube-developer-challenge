@@ -1,5 +1,5 @@
 <?php
-if ($_GET['q']) {
+if (isset($_GET['q'])) {
     // Call set_include_path() as needed to point to your client library.
     require_once 'google-api-php-client/src/Google_Client.php';
     require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';
@@ -47,7 +47,7 @@ if ($_GET['q']) {
             htmlspecialchars($e->getMessage()));
     }
 }
-if ($_GET['v']) {
+if (isset($_GET['v'])) {
 
  // Call set_include_path() as needed to point to your client library.
     require_once 'google-api-php-client/src/Google_Client.php';
@@ -66,7 +66,7 @@ if ($_GET['v']) {
     $client->setDeveloperKey($DEVELOPER_KEY);
 
     $youtube = new Google_YoutubeService($client);
-    
+
     try {
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'relatedToVideoId' => $_GET['v'],
@@ -103,7 +103,7 @@ if ($_GET['v']) {
 <html>
   <head>
     <title>YouTube Search</title>
-    
+
     <link rel="stylesheet" href=".\style.css">
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500' rel='stylesheet' type='text/css'>
 
@@ -123,7 +123,10 @@ if ($_GET['v']) {
     <div id="resultado">
         <!-- Resultado da pesquisa -->
         <h3> Resultado </h3>
-        <ul><?php echo $videos; ?></ul>
+        <ul><?php if(isset($videos)){
+               echo $videos;
+               }
+        ?></ul>
     </div>
     </body>
 </html>
