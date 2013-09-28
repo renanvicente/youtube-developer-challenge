@@ -16,21 +16,24 @@ body {
 	width: 60%;
 }
 
-#botaousr ul {
+#botaouser {
 	float: right;
+}
+
+#botaouser ul {
 	display: inline-block;
 	text-decoration: none;
 }
 
-#botaousr ul li {
+#botaouser ul li {
 	padding: 5px 10px;
 	background-color: #FF1A19;
 	border-radius: 3px;
 }
 
 #botao_conectar a {
-	width: 40px;
-	height: 13px;
+	width: 100px;
+	height: 30px;
 	background-color: #FF1A19;
 	border-radius: 3px;
 }

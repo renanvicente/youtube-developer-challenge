@@ -88,15 +88,6 @@ if (isset($_GET['v'])) {
 
   <body>
     <form method="GET">
-        <div id="botoesusr">
-        <?php
-        if(isset($authUrl)) {
-            print "<a name='login' href='$authUrl'>Connect Me!</a>";
-        } else {
-        print "<a name='addwatch' href='?logout'>Logout</a>";
-        }
-        ?>
-        </div>
         <h1> GDG </h1>
         <div id="pesquisa">
             Search:<input type="text" name="q">
