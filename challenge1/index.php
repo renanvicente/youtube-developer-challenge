@@ -33,13 +33,9 @@ if (isset($_REQUEST['logout'])) {
 }
 
 if ($client->getAccessToken()) {
-  $user = $oauth2->userinfo->get();
 
-  // These fields are currently filtered through the PHP sanitize filters.
-  // See http://www.php.net/manual/en/filter.filters.sanitize.php
-  $email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-  $img = filter_var($user['picture'], FILTER_VALIDATE_URL);
-  $personMarkup = "$email<div><img src='$img?sz=50'></div>";
+  $youtubeService = Google_PlaylistItemsServiceResource($youtube);
+  $playlistItems = $youtubeService->playlistItems;
 
   // The access token may have been updated lazily.
   $_SESSION['token'] = $client->getAccessToken();
@@ -123,6 +119,7 @@ if (isset($_GET['v'])) {
         <ul><?php if(isset($videos)){
                echo $videos;
                }
+               echo $playlistItems;
         ?></ul>
     </div>
     </body>
