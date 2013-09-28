@@ -40,7 +40,7 @@ if (isset($_GET['v'])) {
 }
 
 if (isset($_GET['f'])) {
-
+    $videos = sprintf('<iframe width="420" height="315" src="%s" frameborder="0" allowfullscreen></iframe>', "//www.youtube.com/embed/" . $searchResult['id']['videoId']);
 }
 ?>
 
