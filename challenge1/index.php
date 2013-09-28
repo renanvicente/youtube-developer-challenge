@@ -57,11 +57,11 @@ if (isset($_GET['f'])) {
   <body>
     <form method="GET">
         <h1> GDG </h1>
-        <div id="pesquisa">
+        <div id="pesquisa"> 
             Search:<input type="text" name="q">
+            <button>Pesquisar!</button>
         </div>
 
-        <button>Pesquisar!</button>
 
     </form>
 
