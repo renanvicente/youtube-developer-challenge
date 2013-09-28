@@ -126,7 +126,7 @@ if (isset($_GET['v'])) {
         <ul><?php if(isset($videos)){
                echo $videos;
                }
-               //print_r($playlistItemsResponse);
+               print_r($playlistItemsResponse);
         ?></ul>
     </div>
     </body>
