@@ -57,7 +57,7 @@ if (isset($_GET['f'])) {
   <body>
     <form method="GET">
         <h1> GDG </h1>
-        <div>
+        <div id="pesquisa">
             Search:<input type="text" name="q">
         </div>
 

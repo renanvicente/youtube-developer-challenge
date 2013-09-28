@@ -7,13 +7,18 @@ body {
 	font-family: 'Maven Pro', sans-serif;
 }
 
+.pesquisa {
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
 ul {
 	text-decoration: none;
 }
 
 button {
-	padding: 25px -60px 0;
-	position: relative;
+	padding: 0px -60px 0;
+	position: absolute;
 	border-radius: 3px;
 }
 
@@ -25,4 +30,5 @@ h1 {
 h3 {
 	margin: 15px;
 	padding-top: 30px;
+
 }
