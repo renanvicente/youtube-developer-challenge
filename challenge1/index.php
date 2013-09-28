@@ -37,7 +37,13 @@ if ($client->getAccessToken()) {
   $channel = $youtube->channels->listChannels('contentDetails', array(
       'mine' => 'true',
   ));
+
   $playlists = $youtube->playlists->listPlaylists('snippet', array('id' => $channel['items'][0]['contentDetails']['relatedPlaylists']['watchLater']));
+
+  $playlistItemsResponse = $youtube->playlistItems->listPlaylistItems('snippet', array(
+        'playlistId' => $playlists['items']['0']['id'],
+        'maxResults' => 50
+      ));
 
   // The access token may have been updated lazily.
   $_SESSION['token'] = $client->getAccessToken();
