@@ -113,7 +113,7 @@ if (isset($_GET['v'])) {
                 <div id="botao_conectar">
                     <?php
                     if(isset($authUrl)) {
-                        print "<a name='connect' href='$authUrl'>Connect</a>";
+                        print "<strong><a name='connect' style='background: none'  href='$authUrl'>Connect</a></strong>";
                     } else {
                     print "<strong><a name='logout' style='background: none' href='?logout'>Logout</a></strong>";
                     }
