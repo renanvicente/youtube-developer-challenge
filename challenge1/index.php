@@ -119,11 +119,10 @@ if (isset($_GET['v'])) {
                     if(isset($authUrl)) {
                         print "<a name='connect' href='$authUrl'>Connect</a>";
                     } else {
-                    print "<a name='logout' href='?logout'>Logout</a>";
+                    print "<a name='logout' style='color: black' href='?logout'>Logout</a>";
                     }
                     ?>
                 </div>
-                <li> <button name="addwatch"> Watch later </button> </li>
             </ul>
         </div>
 
