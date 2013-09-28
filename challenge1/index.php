@@ -1,12 +1,51 @@
 <?php
 require_once 'google-api-php-client/src/Google_Client.php';
 require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';
+require_once '../../src/contrib/Google_Oauth2Service.php';
+session_start();
 
 $DEVELOPER_KEY = 'AIzaSyDCbgwn1MQJCUL_ulbUW8lltH4sAsg4gDE';
 
 $client = new Google_Client();
 $client->setDeveloperKey($DEVELOPER_KEY);
+$client->setClientId('212758449592.apps.googleusercontent.com');
+$client->setClientSecret('1oH3JuPRBcRH8fzO7Crid6C6');
+$client->setRedirectUri('http://linuxextreme.org/youtube/youtube-developer-demos/challenge1/');
+$client->setApplicationName("YouTube Developer Examples");
 $youtube = new Google_YoutubeService($client);
+$oauth2 = new Google_Oauth2Service($client);
+
+if (isset($_GET['code'])) {
+  $client->authenticate($_GET['code']);
+  $_SESSION['token'] = $client->getAccessToken();
+  $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  return;
+}
+
+if (isset($_SESSION['token'])) {
+ $client->setAccessToken($_SESSION['token']);
+}
+
+if (isset($_REQUEST['logout'])) {
+  unset($_SESSION['token']);
+  $client->revokeToken();
+}
+
+if ($client->getAccessToken()) {
+  $user = $oauth2->userinfo->get();
+
+  // These fields are currently filtered through the PHP sanitize filters.
+  // See http://www.php.net/manual/en/filter.filters.sanitize.php
+  $email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+  $img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+  $personMarkup = "$email<div><img src='$img?sz=50'></div>";
+
+  // The access token may have been updated lazily.
+  $_SESSION['token'] = $client->getAccessToken();
+} else {
+  $authUrl = $client->createAuthUrl();
+}
 
 if (isset($_GET['q'])) {
     $searchResponse = $youtube->search->listSearch('id,snippet', array(
@@ -54,12 +93,21 @@ if (isset($_GET['v'])) {
 
   <body>
     <form method="GET">
+        <div id="botoesusr">
+        <?php
+		if(isset($authUrl)) {
+			print "<a name='login' href='$authUrl'>Connect Me!</a>";
+		} else {
+		print "<a name='addwatch' href='?logout'>Logout</a>";
+		}
+		?>
+		</div>
         <h1> GDG </h1>
         <div id="pesquisa">
             Search:<input type="text" name="q">
             <button>Pesquisar!</button>
         </div>
-
+		
 
     </form>
 
