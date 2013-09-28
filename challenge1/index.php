@@ -33,7 +33,7 @@ if (isset($_GET['v'])) {
     foreach ($searchResponse['items'] as $searchResult) {
         switch ($searchResult['id']['kind']) {
             case 'youtube#video':
-                $videos .= sprintf('<li><a href="?f=%s"><img src="%s" /></a></li>', $searchResult['id']['videoId'], "http://img.youtube.com/vi/" . $searchResult['id']['videoId'] . "/default.jpg");
+                $videos .= sprintf('<li class="display_inline"><a href="?f=%s"><img src="%s" /></a></li>', $searchResult['id']['videoId'], "http://img.youtube.com/vi/" . $searchResult['id']['videoId'] . "/default.jpg");
                 break;
         }
     }
