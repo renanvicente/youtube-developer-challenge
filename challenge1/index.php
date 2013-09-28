@@ -46,7 +46,7 @@ if ($client->getAccessToken()) {
       ));
 
     foreach ($playlistItemsResponse['items'] as $playlistItem) {
-        $htmlBody .= sprintf('<li><a href="http://www.youtube.com/embed/%s"><img src="%s" /></a>%s</li>', $playlistItem['snippet']['resourceId']['videoId'], "http://img.youtube.com/vi/" . $playlistItem['snippet']['resourceId']['videoId'] . "/default.jpg", $playlistItem['snippet']['title']);
+        $htmlBody .= sprintf('<li><a href="http://www.youtube.com/embed/%s"><img src="%s" /></a><a href="?v=%s">%s</a></li>', $playlistItem['snippet']['resourceId']['videoId'], "http://img.youtube.com/vi/" . $playlistItem['snippet']['resourceId']['videoId'] . "/default.jpg", $playlistItem['snippet']['resourceId']['videoId'], $playlistItem['snippet']['title']);
       }
 
   // The access token may have been updated lazily.
