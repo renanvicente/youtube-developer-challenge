@@ -34,7 +34,7 @@ if (isset($_REQUEST['logout'])) {
 
 if ($client->getAccessToken()) {
 
-  $playlists = $youtube->playlists->listPlaylists('snippet');
+  $playlists = $youtube->playlists->listPlaylists('snippet', array('mine' => True));
 
   // The access token may have been updated lazily.
   $_SESSION['token'] = $client->getAccessToken();
