@@ -9,6 +9,10 @@ if ($_GET['q']) {
     Please ensure that you have enabled the YouTube Data API for your project. */
     $DEVELOPER_KEY = 'AIzaSyDCbgwn1MQJCUL_ulbUW8lltH4sAsg4gDE';
 
+    if (!isset($videos)) {
+        $videos = "";
+    }
+
     $client = new Google_Client();
     $client->setDeveloperKey($DEVELOPER_KEY);
 
