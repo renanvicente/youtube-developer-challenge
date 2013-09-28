@@ -1,7 +1,7 @@
 <?php
 require_once 'google-api-php-client/src/Google_Client.php';
 require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';
-require_once '../../src/contrib/Google_Oauth2Service.php';
+require_once 'google-api-php-client/src/contrib/Google_Oauth2Service.php';
 session_start();
 
 $DEVELOPER_KEY = 'AIzaSyDCbgwn1MQJCUL_ulbUW8lltH4sAsg4gDE';
@@ -69,7 +69,7 @@ if (isset($_GET['v'])) {
         'type'              => 'video'
     ));
 
-	$videos = sprintf('<iframe width="420" height="315" src="%s" frameborder="0" allowfullscreen></iframe>', "http://www.youtube.com/embed/" . $_GET['v']);
+    $videos = sprintf('<iframe width="420" height="315" src="%s" frameborder="0" allowfullscreen></iframe>', "http://www.youtube.com/embed/" . $_GET['v']);
 
     foreach ($searchResponse['items'] as $searchResult) {
         switch ($searchResult['id']['kind']) {
@@ -95,19 +95,19 @@ if (isset($_GET['v'])) {
     <form method="GET">
         <div id="botoesusr">
         <?php
-		if(isset($authUrl)) {
-			print "<a name='login' href='$authUrl'>Connect Me!</a>";
-		} else {
-		print "<a name='addwatch' href='?logout'>Logout</a>";
-		}
-		?>
-		</div>
+        if(isset($authUrl)) {
+            print "<a name='login' href='$authUrl'>Connect Me!</a>";
+        } else {
+        print "<a name='addwatch' href='?logout'>Logout</a>";
+        }
+        ?>
+        </div>
         <h1> GDG </h1>
         <div id="pesquisa">
             Search:<input type="text" name="q">
             <button>Pesquisar!</button>
         </div>
-		
+
 
     </form>
 
