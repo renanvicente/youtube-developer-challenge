@@ -119,7 +119,7 @@ if (isset($_GET['v'])) {
                     if(isset($authUrl)) {
                         print "<a name='connect' href='$authUrl'>Connect</a>";
                     } else {
-                    print "<a name='logout' style='color: black' href='?logout'>Logout</a>";
+                    print "<a name='logout' style='background: none' href='?logout'>Logout</a>";
                     }
                     ?>
                 </div>
