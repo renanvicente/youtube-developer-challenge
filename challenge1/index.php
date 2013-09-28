@@ -1,8 +1,8 @@
 <?php
 if ($_GET['q'] && $_GET['maxResults']) {
     // Call set_include_path() as needed to point to your client library.
-    require_once 'google-api-php-client/src/Google_Client.php';
-    require_once 'google-api-php-client/src/contrib/Google_PlusService.php';
+    require_once '/youtube/youtube-developer-demos/challenge1/google-api-php-client/src/Google_Client.php';
+    require_once '/youtube/youtube-developer-demos/challenge1/google-api-php-client/src/contrib/Google_PlusService.php';
 
     /* Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
     Google APIs Console <http://code.google.com/apis/console#access>
