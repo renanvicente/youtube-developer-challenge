@@ -7,7 +7,7 @@ if ($_GET['q']) {
     /* Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
     Google APIs Console <http://code.google.com/apis/console#access>
     Please ensure that you have enabled the YouTube Data API for your project. */
-    $DEVELOPER_KEY = 'AIzaSyB1Qf_jJthmTaLLAnXei7jxEqQLcmSZBRQ';
+    $DEVELOPER_KEY = 'AIzaSyDcMSaAGDxXADAmymNPfo-gu33JC9Ut6LE';
 
     $client = new Google_Client();
     $client->setDeveloperKey($DEVELOPER_KEY);
