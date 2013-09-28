@@ -2,12 +2,12 @@
 if ($_GET['q']) {
     // Call set_include_path() as needed to point to your client library.
     require_once 'google-api-php-client/src/Google_Client.php';
-    require_once 'google-api-php-client/src/contrib/Google_PlusService.php';
+    require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';
 
     /* Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
     Google APIs Console <http://code.google.com/apis/console#access>
     Please ensure that you have enabled the YouTube Data API for your project. */
-    $DEVELOPER_KEY = 'AIzaSyDOkg-u9jnhP-WnzX5WPJyV1sc5QQrtuyc';
+    $DEVELOPER_KEY = 'AIzaSyB1Qf_jJthmTaLLAnXei7jxEqQLcmSZBRQ';
 
     $client = new Google_Client();
     $client->setDeveloperKey($DEVELOPER_KEY);
@@ -17,7 +17,7 @@ if ($_GET['q']) {
     try {
         $searchResponse = $youtube->search->listSearch('id,snippet', array(
             'q' => $_GET['q'],
-            'maxResults' => $_GET['maxResults'],
+            'maxResults' => 25,
         ));
 
         $videos = '';
@@ -58,7 +58,7 @@ if ($_GET['q']) {
     <form method="GET">
 
         <div>
-            Search:<input type="text" name="search">
+            Search:<input type="text" name="q">
         </div>
 
         <button>Pesquisar!</button>
