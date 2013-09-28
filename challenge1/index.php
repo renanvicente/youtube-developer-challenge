@@ -27,7 +27,7 @@ if ($_GET['q'] && $_GET['maxResults']) {
       switch ($searchResult['id']['kind']) {
         case 'youtube#video':
           $videos .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
-            $searchResult['id']['videoId']."<a href=http://www.youtube.com/watch?v=".$searchResult['id']['videoId']." target=_blank>   Watch This Video</a>");
+            $searchResult['id']['videoId']."<a href=index.php?v=".$searchResult['id']['videoId']." target=_blank>   Videos Relacionados</a>");
           break;
         case 'youtube#channel':
           $channels .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
@@ -51,7 +51,7 @@ if ($_GET['q'] && $_GET['maxResults']) {
   <head>
     <title>YouTube Search</title>
 	<style type="text/css">
-		body{margin-top: 50px; margin-left: 50px}
+		body{margin-top: 50px; margin-left: 200px}
 	</style>
   </head>
   
