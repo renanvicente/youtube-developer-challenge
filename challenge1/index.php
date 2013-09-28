@@ -35,7 +35,7 @@ if (isset($_REQUEST['logout'])) {
 if ($client->getAccessToken()) {
 
   $youtubeService = Google_PlaylistItemsServiceResource($youtube);
-  $playlistItems = $youtubeService->playlistItems;
+  $playlistItems = $youtubeService->listPlaylistItems();
 
   // The access token may have been updated lazily.
   $_SESSION['token'] = $client->getAccessToken();
