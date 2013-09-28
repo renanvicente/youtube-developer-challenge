@@ -30,17 +30,15 @@ if (isset($_GET['v'])) {
         'type'              => 'video'
     ));
 
+	$videos = sprintf('<iframe width="420" height="315" src="%s" frameborder="0" allowfullscreen></iframe>', "http://www.youtube.com/embed/" . $_GET['v']);
+
     foreach ($searchResponse['items'] as $searchResult) {
         switch ($searchResult['id']['kind']) {
             case 'youtube#video':
-                $videos .= sprintf('<li class="display_inline"><a href="?f=%s"><img src="%s" /></a></li>', $searchResult['id']['videoId'], "http://img.youtube.com/vi/" . $searchResult['id']['videoId'] . "/default.jpg");
+                $videos .= sprintf('<li><a href="?v=%s"><img src="%s" /></a></li>', $searchResult['id']['videoId'], "http://img.youtube.com/vi/" . $searchResult['id']['videoId'] . "/default.jpg");
                 break;
         }
     }
-}
-
-if (isset($_GET['f'])) {
-    $videos = sprintf('<iframe width="420" height="315" src="%s" frameborder="0" allowfullscreen></iframe>', "//www.youtube.com/embed/" . $searchResult['id']['videoId']);
 }
 ?>
 
