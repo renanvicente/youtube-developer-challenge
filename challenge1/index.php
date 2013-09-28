@@ -45,6 +45,11 @@ if ($client->getAccessToken()) {
         'maxResults' => 50
       ));
 
+    foreach ($playlistItemsResponse['items'] as $playlistItem) {
+        $htmlBody .= sprintf('<li>%s (%s)</li>', $playlistItem['snippet']['title'],
+          $playlistItem['snippet']['resourceId']['videoId']);
+      }
+
   // The access token may have been updated lazily.
   $_SESSION['token'] = $client->getAccessToken();
 } else {
@@ -126,8 +131,12 @@ if (isset($_GET['v'])) {
         <ul><?php if(isset($videos)){
                echo $videos;
                }
-               print_r($playlistItemsResponse);
+               echo $htmlBody;
         ?></ul>
+        <h3>Watch later</h3>
+        <?php
+        echo $htmlBody;
+        ?>
     </div>
     </body>
 </html>
