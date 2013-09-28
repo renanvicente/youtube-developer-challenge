@@ -118,7 +118,7 @@ if (isset($_GET['v'])) {
         <ul><?php if(isset($videos)){
                echo $videos;
                }
-               echo $playlists;
+               print_r($playlists);
         ?></ul>
     </div>
     </body>
