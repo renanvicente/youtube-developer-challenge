@@ -37,7 +37,7 @@ if ($client->getAccessToken()) {
   $channel = $youtube->channels->listChannels('contentDetails', array(
       'mine' => 'true',
   ));
-  #$playlists = $youtube->playlists->listPlaylists('snippet', array('id' => $channel['contentDetails']['relatedPlaylists']['watchLater']));
+  $playlists = $youtube->playlists->listPlaylists('snippet', array('id' => $channel['items'][0]['contentDetails']['relatedPlaylists']['watchLater']));
 
   // The access token may have been updated lazily.
   $_SESSION['token'] = $client->getAccessToken();
@@ -120,7 +120,7 @@ if (isset($_GET['v'])) {
         <ul><?php if(isset($videos)){
                echo $videos;
                }
-               print_r($channel);
+               print_r($playlists);
         ?></ul>
     </div>
     </body>
