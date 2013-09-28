@@ -108,6 +108,12 @@ if (isset($_GET['v'])) {
             <button>Pesquisar!</button>
         </div>
 
+        <div id="botoesuser">
+            <ul>
+                <li> <button name='login'> Connect </button> </li>
+                <li> <button name="addwatch"> Watch later </button> </li>
+            </ul>
+        </div>
 
     </form>
 

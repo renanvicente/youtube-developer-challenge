@@ -16,6 +16,18 @@ body {
 	width: 60%;
 }
 
+#botaousr ul {
+	float: right;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#botaousr ul li {
+	padding: 5px 10px;
+	background-color: #FF1A19;
+	border-radius: 3px;
+}
+
 ul {
 	text-decoration: none;
 	list-style: none;
