@@ -34,6 +34,7 @@ if ($_GET['q'] && $_GET['maxResults']) {
             $searchResult['id']['channelId']);
           break;
        }
+     }
      } catch (Google_ServiceException $e) {
         $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
             htmlspecialchars($e->getMessage()));
